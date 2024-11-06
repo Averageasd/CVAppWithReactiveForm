@@ -1,9 +1,12 @@
 # CvAppStateManagementPractice
 Simplified CV App written in Angular.
 
-# About
+## About
 CV App that uses ReactiveForm. FormGroups are used to divide the form into 3 sections: personal info, education, and work experience.
 FormArray is used to contain array of education and work experience forms.
 
-# To-do
+## To-do
 Add 1 more section for work experience. Split the app component into smaller components.
+
+## Note
+UI is very basic since my focus was on internal workings of reactiveForm
