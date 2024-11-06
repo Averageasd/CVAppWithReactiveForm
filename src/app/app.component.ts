@@ -26,9 +26,9 @@ export class AppComponent implements OnInit {
   }
 
   subscribeToPersonalInfoFields() {
-    this.getLatestValuesOfPersonalInfoFields().subscribe((value)=>{
+    this.getLatestValuesOfPersonalInfoFields().subscribe((value) => {
       console.log(value);
-    })
+    });
   }
 
   getLatestValuesOfPersonalInfoFields() {
@@ -48,7 +48,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  addNewSchoolInputField() {
+  addNewSchoolInputField($event:any) {
+    $event.preventDefault();
     const schoolInputsArray = this.formGroup.get('schoolInputs') as FormArray;
     schoolInputsArray.push(this.newSchoolInputFormControl());
     this.subscribeToSchoolInputArray();
@@ -74,6 +75,12 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formGroup.value);
+    this.formGroup.get('name')?.reset();
+    this.formGroup.get('email')?.reset();
+    const schoolInputsArray = this.formGroup.get('schoolInputs') as FormArray;
+    schoolInputsArray.controls.forEach((element) => {
+      element.reset();
+    });
+    schoolInputsArray.controls = [];
   }
 }

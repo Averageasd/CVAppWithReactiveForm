@@ -44,11 +44,11 @@
                 </div>
               </div>
             </div>
-            <a href="#" class="text-danger" role="button" (click)="onDeleteSchoolInputField(i)">delete</a>
+            <a class="text-danger" role="button" (click)="onDeleteSchoolInputField(i)">delete</a>
           </div>
         </div>
         <div class="mt-1">
-          <button class="btn button button-small btn-primary" (click)="addNewSchoolInputField()">Add</button>
+          <button class="btn button button-small btn-primary" (click)="addNewSchoolInputField($event)">Add</button>
         </div>
       </div>
 
